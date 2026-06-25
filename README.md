@@ -1,37 +1,36 @@
+# CodeTrack AI 🚀
 
- CodeTrack AI 🚀
-
-An AI-Assisted Coding Progress Tracker for IT Student
+**An AI-Assisted Coding Progress Tracker for IT Students**
 
 Built with Laravel 11, MySQL, Blade, Bootstrap 5, and optional Claude AI integration.
 
+---
 
+## ✨ Features
 
- ✨ Features
-
- Student Module
+### Student Module
 - **Dashboard** — Total hours, activity streak, weekly chart, language breakdown, subject progress
 - **Coding Logs** — Full CRUD with title, description, language, time, date, difficulty, code snippet
 - **AI Feedback** — One-click code review via Claude (Anthropic API)
 
- Instructor Module
+### Instructor Module
 - **Analytics Dashboard** — System-wide charts, top students, subject engagement
 - **Student Management** — Browse, search, filter, view individual progress
 - **CSV Export** — Export all logs or per-student reports
 
- Subjects Module
+### Subjects Module
 - Create, edit, delete subjects with color coding
 - Assign/remove students from subjects
 - View subject-level analytics
 
- Auth
+### Auth
 - Laravel Breeze authentication
 - Student & Instructor roles
 - Role-based middleware protection
 
+---
 
-
- 🗂️ Project Structure
+## 🗂️ Project Structure
 
 ```
 app/
@@ -80,27 +79,29 @@ resources/views/
     └── 403.blade.php
 ```
 
-🚀 Setup Instructions
+---
 
- 1. Create a new Laravel 11 project
+## 🚀 Setup Instructions
+
+### 1. Create a new Laravel 11 project
 
 ```bash
 laravel new codetrack-ai
 cd codetrack-ai
 ```
 
- 2. Install Laravel Breeze
+### 2. Install Laravel Breeze
 
 ```bash
 composer require laravel/breeze --dev
 php artisan breeze:install blade
 ```
 
- 3. Copy this project's files over the Laravel skeleton
+### 3. Copy this project's files over the Laravel skeleton
 
 Place all files from this package into their matching paths in your Laravel project.
 
- 4. Configure your `.env`
+### 4. Configure your `.env`
 
 ```env
 APP_NAME="CodeTrack AI"
@@ -117,17 +118,17 @@ DB_PASSWORD=
 ANTHROPIC_API_KEY=sk-ant-your-key-here
 ```
 
- 5. Run migrations and seed
+### 5. Run migrations and seed
 
 ```bash
 php artisan migrate:fresh --seed
 ```
 
- 6. Register the role middleware in `bootstrap/app.php`
+### 6. Register the role middleware in `bootstrap/app.php`
 
 This is already included in the provided `bootstrap/app.php`. The alias `'role'` maps to `RoleMiddleware::class`.
 
- 7. Start the server
+### 7. Start the server
 
 ```bash
 php artisan serve
@@ -137,7 +138,7 @@ Visit `http://localhost:8000`
 
 ---
 
- 🔑 Demo Accounts
+## 🔑 Demo Accounts
 
 | Role       | Email                       | Password   |
 |------------|-----------------------------|------------|
@@ -148,7 +149,7 @@ Visit `http://localhost:8000`
 
 ---
 
- 🤖 AI Integration (Optional)
+## 🤖 AI Integration (Optional)
 
 The AI feedback uses the **Anthropic Claude API**.
 
@@ -160,7 +161,7 @@ The `AiFeedbackService` builds a structured prompt including the student's langu
 
 ---
 
- 🗄️ Database Schema
+## 🗄️ Database Schema
 
 ```
 roles           id, name, display_name
@@ -176,7 +177,7 @@ ai_feedback_logs id, coding_log_id, user_id, prompt_sent,
 
 ---
 
- 🛡️ Role-Based Access Control
+## 🛡️ Role-Based Access Control
 
 | Route prefix      | Middleware              | Access        |
 |-------------------|-------------------------|---------------|
@@ -187,7 +188,7 @@ ai_feedback_logs id, coding_log_id, user_id, prompt_sent,
 
 ---
 
- 📊 Key Eloquent Relationships
+## 📊 Key Eloquent Relationships
 
 ```php
 // User
@@ -205,9 +206,10 @@ CodingLog → belongsTo(User)
 CodingLog → belongsTo(Subject)
 CodingLog → hasMany(AiFeedbackLog)
 ```
+
 ---
 
- 🛠️ Tech Stack
+## 🛠️ Tech Stack
 
 - **Laravel 11** — MVC framework
 - **MySQL** — Relational database
@@ -218,7 +220,3 @@ CodingLog → hasMany(AiFeedbackLog)
 - **Bootstrap Icons** — Icon set
 - **Anthropic Claude API** — AI code feedback
 - **JetBrains Mono** — Code font
-
-
-"CodeTrack AI”, an AI-assisted coding progress tracker for IT students.
->>>>>>> 269af23e8238577176da84d7f0aa78d38328379c

@@ -27,7 +27,7 @@
                 </div>
             </div>
         </div>
-        <a href="{{ route('instructor.students.export', $student) }}" class="btn btn-outline-primary">
+        <a href="{{ route("instructor.students.export", $student) }}" class="btn btn-outline-secondary me-1"><i class="bi bi-filetype-csv me-1"></i>CSV</a><a href="{{ route("instructor.students.pdf", $student) }}" target="_blank" class="btn btn-outline-primary">
             <i class="bi bi-download me-1"></i>Export CSV
         </a>
     </div>

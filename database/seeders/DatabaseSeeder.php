@@ -13,6 +13,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             SubjectSeeder::class,
             CodingLogSeeder::class,
+            BadgeSeeder::class,
+            AnnouncementSeeder::class,
         ]);
     }
 }
